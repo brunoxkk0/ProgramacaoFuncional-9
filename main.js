@@ -1,32 +1,28 @@
 const R = require('ramda');
 
-function isEven(number) {
+const isEven = number => {
     const n = R.clone(number);
-    n.even = n.value % 2 == 0;
+    n.even = n.value % 2 === 0;
     return n;
 }
 
-function positive(number) {
+const positive = number => {
     const n = R.clone(number);
     n.positive = n.value > 0;
     return n;
 }
 
-function isOdd(number) {
-    return !isEven(number)
-}
+const isOdd = num => !isEven(num);
 
-function negative(number) {
-    return !positive(number)
-}
+const negative = num => !positive(num);
 
-function isZero(number) {
+const isZero = number => {
     const n = R.clone(number);
     n.positive = n.value === 0;
     return n;
 }
 
-function isPrime(number) {
+const isPrime = number => {
 
     const n = R.clone(number);
 
@@ -41,7 +37,7 @@ function isPrime(number) {
     return n;
 }
 
-function mapToNumberObject(num) {
+const mapToNumberObject = num => {
     return { value: num };
 }
 
