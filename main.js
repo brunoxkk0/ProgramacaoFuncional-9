@@ -54,7 +54,9 @@ const nArr = arr.map(mapToNumberObject)
     // isZero, e isPrime. Teste a função composta com um único objeto.
 const func = R.pipe(isEven, positive, isOdd, negative, isZero, isPrime);
 
-const result = func(mapToNumberObject(3))
-console.log("Resultado: " + result)
+//const result = func(mapToNumberObject(3))
+//console.log("Resultado: " + result)
 
 // Exercício 5: use a função composta do Ex. 4 para transformar os números em 'arr'
+const result = arr.map(n => func(mapToNumberObject(n)))
+console.log(result)
