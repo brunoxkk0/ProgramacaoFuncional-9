@@ -13,19 +13,32 @@ function positive(number) {
 }
 
 function isOdd(number) {
-    // Implementar
+    return !isEven(number)
 }
 
 function negative(number) {
-    // Implementar
+    return !positive(number)
 }
 
 function isZero(number) {
-    // Implementar
+    const n = R.clone(number);
+    n.positive = n.value === 0;
+    return n;
 }
 
 function isPrime(number) {
-    // Implementar
+
+    const n = R.clone(number);
+
+    for(let i = 2; i < n.value; i++)
+        if(n.value % i === 0){
+            n.positive = false;
+            return n;
+        }
+
+    n.positive = n.value > 1;
+
+    return n;
 }
 
 function mapToNumberObject(num) {
